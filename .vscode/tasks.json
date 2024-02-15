@@ -1,0 +1,72 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Ejecutar Frontend Dev",
+            "type": "npm",
+            "script": "dev",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}\\frontend"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+         {
+            "label": "Prisma Migrate & Start NestJS",
+            "type": "shell",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}\\backend"
+            },
+            "command": "npx prisma migrate dev --name init; if ($?) { npm run start:dev}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        }
+        //  { 
+        //     "label": "Ejecutar backend Dev",
+        //     "type": "shell",
+        //     "command": ".\\env\\Scripts\\Activate.ps1; if ($?) { python manage.py runserver }",
+        //     "options": {
+        //         "cwd": "${workspaceFolder}\\backend"
+        //     },
+
+        //     "runOptions": {
+        //         "runOn": "folderOpen"
+        //     },
+            
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     },
+        //     "presentation": {
+        //         "reveal": "always",
+        //         "panel": "new"
+        //     },
+        //     "problemMatcher": []
+        // }
+    ]
+}
+
+
+// npx prisma migrate dev --name init
